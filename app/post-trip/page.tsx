@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { addDoc, collection } from "firebase/firestore";
-import { db } from "../../firebase";
+
 
 export default function PostTripPage() {
   const [destination, setDestination] = useState("");
