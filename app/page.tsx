@@ -6,10 +6,6 @@ export default function PostTripPage() {
   const [destination, setDestination] = useState("");
   const [bike, setBike] = useState("");
 
-  const publishRide = () => {
-    alert("Ride Published!");
-  };
-
   return (
     <main className="min-h-screen bg-black text-white px-8 py-12">
       <div className="max-w-3xl mx-auto">
@@ -35,7 +31,7 @@ export default function PostTripPage() {
           />
 
           <button
-            onClick={publishRide}
+            onClick={() => alert("Ride Published!")}
             className="w-full bg-orange-500 py-4 rounded-2xl text-xl font-bold"
           >
             Publish Ride
