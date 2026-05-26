@@ -1,4 +1,23 @@
+"use client";
+
+import { useState } from "react";
+
 export default function ProfilePage() {
+  const [profileImage, setProfileImage] = useState(
+    "https://i.pravatar.cc/200"
+  );
+
+  const handleImageUpload = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const file = event.target.files?.[0];
+
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setProfileImage(imageUrl);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-black text-white px-6 py-10">
       <div className="max-w-4xl mx-auto">
@@ -8,10 +27,21 @@ export default function ProfilePage() {
           <div className="flex flex-col items-center">
 
             <img
-              src="https://i.pravatar.cc/200"
+              src={profileImage}
               alt="Profile"
-              className="w-40 h-40 rounded-full border-4 border-orange-500"
+              className="w-40 h-40 rounded-full border-4 border-orange-500 object-cover"
             />
+
+            <label className="mt-6 cursor-pointer bg-orange-500 px-6 py-3 rounded-2xl font-bold hover:scale-105 transition">
+              Upload Profile Photo
+
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageUpload}
+                className="hidden"
+              />
+            </label>
 
             <h1 className="text-4xl font-black mt-6">
               Arbhaz Pasha
