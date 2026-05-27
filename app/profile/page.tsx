@@ -6,20 +6,12 @@ export default function ProfilePage() {
   const [profileImage, setProfileImage] = useState(
     "https://i.pravatar.cc/200"
   );
-const [bikeImage, setBikeImage] = useState(
-  "https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1200&auto=format&fit=crop"
-);
-  const handleImageUpload = (
-    const handleBikeUpload = (
-  event: React.ChangeEvent<HTMLInputElement>
-) => {
-  const file = event.target.files?.[0];
 
-  if (file) {
-    const imageUrl = URL.createObjectURL(file);
-    setBikeImage(imageUrl);
-  }
-};
+  const [bikeImage, setBikeImage] = useState(
+    "https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1200&auto=format&fit=crop"
+  );
+
+  const handleImageUpload = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     const file = event.target.files?.[0];
@@ -27,6 +19,17 @@ const [bikeImage, setBikeImage] = useState(
     if (file) {
       const imageUrl = URL.createObjectURL(file);
       setProfileImage(imageUrl);
+    }
+  };
+
+  const handleBikeUpload = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const file = event.target.files?.[0];
+
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setBikeImage(imageUrl);
     }
   };
 
@@ -68,82 +71,24 @@ const [bikeImage, setBikeImage] = useState(
           <div className="grid md:grid-cols-2 gap-6 mt-12">
 
             <div className="bg-black rounded-2xl p-6">
-            <img
-  src={bikeImage}
-  alt="Bike"
-  className="w-full h-64 object-cover rounded-2xl mb-4"
-/>
 
-<label className="cursor-pointer bg-orange-500 px-4 py-2 rounded-xl font-bold inline-block mb-4">
-  Upload Bike Photo
+              <img
+                src={bikeImage}
+                alt="Bike"
+                className="w-full h-64 object-cover rounded-2xl mb-4"
+              />
 
-  <input
-    type="file"
-    accept="image/*"
-    onChange={handleBikeUpload}
-    className="hidden"
-  />
-</label><img
-  src={bikeImage}
-  alt="Bike"
-  className="w-full h-64 object-cover rounded-2xl mb-4"
-/>
+              <label className="cursor-pointer bg-orange-500 px-4 py-2 rounded-xl font-bold inline-block mb-4">
+                Upload Bike Photo
 
-<label className="cursor-pointer bg-orange-500 px-4 py-2 rounded-xl font-bold inline-block mb-4">
-  Upload Bike Photo
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleBikeUpload}
+                  className="hidden"
+                />
+              </label>
 
-  <input
-    type="file"
-    accept="image/*"
-    onChange={handleBikeUpload}
-    className="hidden"
-  />
-</label><img
-  src={bikeImage}
-  alt="Bike"
-  className="w-full h-64 object-cover rounded-2xl mb-4"
-/>
-
-<label className="cursor-pointer bg-orange-500 px-4 py-2 rounded-xl font-bold inline-block mb-4">
-  Upload Bike Photo
-
-  <input
-    type="file"
-    accept="image/*"
-    onChange={handleBikeUpload}
-    className="hidden"
-  />
-</label><img
-  src={bikeImage}
-  alt="Bike"
-  className="w-full h-64 object-cover rounded-2xl mb-4"
-/>
-
-<label className="cursor-pointer bg-orange-500 px-4 py-2 rounded-xl font-bold inline-block mb-4">
-  Upload Bike Photo
-
-  <input
-    type="file"
-    accept="image/*"
-    onChange={handleBikeUpload}
-    className="hidden"
-  />
-</label><img
-  src={bikeImage}
-  alt="Bike"
-  className="w-full h-64 object-cover rounded-2xl mb-4"
-/>
-
-<label className="cursor-pointer bg-orange-500 px-4 py-2 rounded-xl font-bold inline-block mb-4">
-  Upload Bike Photo
-
-  <input
-    type="file"
-    accept="image/*"
-    onChange={handleBikeUpload}
-    className="hidden"
-  />
-</label>
               <h2 className="text-2xl font-bold text-orange-500 mb-4">
                 Bike Details
               </h2>
@@ -152,9 +97,11 @@ const [bikeImage, setBikeImage] = useState(
               <p>⚡ Top Speed: 170 km/h</p>
               <p>⛽ Mileage: 28 km/l</p>
               <p>🛣 Favorite Route: Tawang</p>
+
             </div>
 
             <div className="bg-black rounded-2xl p-6">
+
               <h2 className="text-2xl font-bold text-orange-500 mb-4">
                 Ride Stats
               </h2>
@@ -163,6 +110,7 @@ const [bikeImage, setBikeImage] = useState(
               <p>🌍 States Covered: 8</p>
               <p>🛣 Total Distance: 18,400 km</p>
               <p>🔥 Longest Ride: Bangalore → Tawang</p>
+
             </div>
 
           </div>
