@@ -83,6 +83,66 @@ const [bikeImage, setBikeImage] = useState(
     onChange={handleBikeUpload}
     className="hidden"
   />
+</label><img
+  src={bikeImage}
+  alt="Bike"
+  className="w-full h-64 object-cover rounded-2xl mb-4"
+/>
+
+<label className="cursor-pointer bg-orange-500 px-4 py-2 rounded-xl font-bold inline-block mb-4">
+  Upload Bike Photo
+
+  <input
+    type="file"
+    accept="image/*"
+    onChange={handleBikeUpload}
+    className="hidden"
+  />
+</label><img
+  src={bikeImage}
+  alt="Bike"
+  className="w-full h-64 object-cover rounded-2xl mb-4"
+/>
+
+<label className="cursor-pointer bg-orange-500 px-4 py-2 rounded-xl font-bold inline-block mb-4">
+  Upload Bike Photo
+
+  <input
+    type="file"
+    accept="image/*"
+    onChange={handleBikeUpload}
+    className="hidden"
+  />
+</label><img
+  src={bikeImage}
+  alt="Bike"
+  className="w-full h-64 object-cover rounded-2xl mb-4"
+/>
+
+<label className="cursor-pointer bg-orange-500 px-4 py-2 rounded-xl font-bold inline-block mb-4">
+  Upload Bike Photo
+
+  <input
+    type="file"
+    accept="image/*"
+    onChange={handleBikeUpload}
+    className="hidden"
+  />
+</label><img
+  src={bikeImage}
+  alt="Bike"
+  className="w-full h-64 object-cover rounded-2xl mb-4"
+/>
+
+<label className="cursor-pointer bg-orange-500 px-4 py-2 rounded-xl font-bold inline-block mb-4">
+  Upload Bike Photo
+
+  <input
+    type="file"
+    accept="image/*"
+    onChange={handleBikeUpload}
+    className="hidden"
+  />
 </label>
               <h2 className="text-2xl font-bold text-orange-500 mb-4">
                 Bike Details
