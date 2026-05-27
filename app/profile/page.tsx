@@ -6,8 +6,20 @@ export default function ProfilePage() {
   const [profileImage, setProfileImage] = useState(
     "https://i.pravatar.cc/200"
   );
-
+const [bikeImage, setBikeImage] = useState(
+  "https://images.unsplash.com/photo-1558981806-ec527fa84c39?q=80&w=1200&auto=format&fit=crop"
+);
   const handleImageUpload = (
+    const handleBikeUpload = (
+  event: React.ChangeEvent<HTMLInputElement>
+) => {
+  const file = event.target.files?.[0];
+
+  if (file) {
+    const imageUrl = URL.createObjectURL(file);
+    setBikeImage(imageUrl);
+  }
+};
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     const file = event.target.files?.[0];
@@ -56,6 +68,22 @@ export default function ProfilePage() {
           <div className="grid md:grid-cols-2 gap-6 mt-12">
 
             <div className="bg-black rounded-2xl p-6">
+            <img
+  src={bikeImage}
+  alt="Bike"
+  className="w-full h-64 object-cover rounded-2xl mb-4"
+/>
+
+<label className="cursor-pointer bg-orange-500 px-4 py-2 rounded-xl font-bold inline-block mb-4">
+  Upload Bike Photo
+
+  <input
+    type="file"
+    accept="image/*"
+    onChange={handleBikeUpload}
+    className="hidden"
+  />
+</label>
               <h2 className="text-2xl font-bold text-orange-500 mb-4">
                 Bike Details
               </h2>
